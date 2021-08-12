@@ -11,12 +11,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OpenCallBlocker" >
 
-        <activity android:name=".presentation.blocked.BlockedCallsActivity">
+        <activity android:name=".presentation.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".infrastructure.CallBlockerService"
+            android:permission="android.permission.BIND_SCREENING_SERVICE">
+            <intent-filter>
+                <action android:name="android.telecom.CallScreeningService"/>
+            </intent-filter>
+        </service>
 
     </application>
 
