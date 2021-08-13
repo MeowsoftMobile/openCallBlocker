@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.databinding.DataBindingUtil
 import com.meowsoft.callblocker.R
-import com.meowsoft.callblocker.databinding.ViewBlockedCallsBinding
 import com.meowsoft.callblocker.databinding.ViewFiltersBinding
 
 class FiltersView(
