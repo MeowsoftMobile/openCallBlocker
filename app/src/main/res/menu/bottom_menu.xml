@@ -11,4 +11,9 @@
         android:enabled="true"
         android:title="Filters"
         app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/third"
+        android:enabled="true"
+        android:title="Third"
+        app:showAsAction="ifRoom" />
 </menu>
