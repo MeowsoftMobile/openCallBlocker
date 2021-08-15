@@ -7,6 +7,7 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15780141843971632" />
         <entry key="app/src/main/res/layout/fragment_blocked_calls.xml" value="0.15780141843971632" />
         <entry key="app/src/main/res/layout/fragment_filters.xml" value="0.15780141843971632" />
+        <entry key="app/src/main/res/layout/item_blocked_call.xml" value="0.1887031408308004" />
         <entry key="app/src/main/res/layout/item_blocked_calls.xml" value="0.15780141843971632" />
         <entry key="app/src/main/res/layout/item_filter.xml" value="0.17617753623188406" />
         <entry key="app/src/main/res/layout/item_filters.xml" value="0.15780141843971632" />

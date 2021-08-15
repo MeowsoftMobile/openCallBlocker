@@ -8,6 +8,7 @@ import com.meowsoft.callblocker.databinding.ActivityMainBinding
 import com.meowsoft.callblocker.presentation.main.viewpager.FragmentAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import android.app.role.RoleManager
 
 class MainActivity : AppCompatActivity() {
 
@@ -26,5 +27,13 @@ class MainActivity : AppCompatActivity() {
                 it.pageAdapter = FragmentAdapter(this@MainActivity)
                 it.lifecycleOwner = this@MainActivity
             }
+
+        requestRole()
+    }
+
+    fun requestRole() {
+        val roleManager = getSystemService(ROLE_SERVICE) as RoleManager
+        val intent = roleManager.createRequestRoleIntent(RoleManager.ROLE_CALL_SCREENING)
+        startActivityForResult(intent, 101)
     }
 }

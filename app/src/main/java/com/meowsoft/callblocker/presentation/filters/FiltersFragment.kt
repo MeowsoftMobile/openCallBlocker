@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.meowsoft.callblocker.R
 import com.meowsoft.callblocker.databinding.FragmentFiltersBinding
 import com.meowsoft.callblocker.presentation.common.RvSupplier
+import com.meowsoft.callblocker.presentation.blocked.list.BlockedCallsAdapter
 import com.meowsoft.callblocker.presentation.filters.list.FiltersListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

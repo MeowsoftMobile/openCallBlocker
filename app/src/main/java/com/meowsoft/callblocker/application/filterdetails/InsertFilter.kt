@@ -1,4 +1,4 @@
-package com.meowsoft.callblocker.application.filters
+package com.meowsoft.callblocker.application.filterdetails
 
 import com.meowsoft.callblocker.application.CompletableUseCaseWithParam
 import com.meowsoft.callblocker.domain.Filter

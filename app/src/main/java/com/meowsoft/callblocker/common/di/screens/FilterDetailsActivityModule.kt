@@ -1,7 +1,7 @@
 package com.meowsoft.callblocker.common.di.screens
 
-import com.meowsoft.callblocker.application.filters.InsertFilter
-import com.meowsoft.callblocker.application.filters.InsertFiltersImpl
+import com.meowsoft.callblocker.application.filterdetails.InsertFilter
+import com.meowsoft.callblocker.application.filterdetails.InsertFiltersImpl
 import com.meowsoft.callblocker.presentation.filterdetails.FilterDetailsActivity
 import com.meowsoft.callblocker.presentation.filterdetails.FilterDetailsViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -16,9 +16,9 @@ val filterDetailsActivityModule = module {
         }
     }
 
-    viewModel {
+    viewModel { scope ->
         FilterDetailsViewModel(
-            get()
+            scope.get()
         )
     }
 }

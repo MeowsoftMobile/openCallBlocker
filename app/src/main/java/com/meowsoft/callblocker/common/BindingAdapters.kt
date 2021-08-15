@@ -11,13 +11,14 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.meowsoft.callblocker.common.config.MenuConfig
+import com.meowsoft.callblocker.domain.CallLog
 import com.meowsoft.callblocker.domain.Filter
 import com.meowsoft.callblocker.domain.MenuPage
 import com.meowsoft.callblocker.presentation.common.OnPageChangedListener
 import com.meowsoft.callblocker.presentation.common.RvSupplier
+import com.meowsoft.callblocker.presentation.blocked.list.BlockedCallsAdapter
 import com.meowsoft.callblocker.presentation.filters.list.FiltersListAdapter
 import com.meowsoft.callblocker.presentation.main.viewpager.FragmentAdapter
-import java.text.FieldPosition
 
 @BindingAdapter("selectedPositionAttrChanged")
 fun Spinner.bindSelectionChangedListener(listener: InverseBindingListener?){
@@ -51,10 +52,19 @@ fun Spinner.bindAdapter(adapter: BaseAdapter) {
 }
 
 @BindingAdapter("data")
-fun RecyclerView.bindData(filters: List<Filter>) {
+fun RecyclerView.bindFiltersData(filters: List<Filter>) {
     adapter?.let {
         if (it is FiltersListAdapter) {
             it.data = filters
+        }
+    }
+}
+
+@BindingAdapter("data")
+fun RecyclerView.bindCallLogsData(callLogs: List<CallLog>) {
+    adapter?.let {
+        if (it is BlockedCallsAdapter) {
+            it.data = callLogs
         }
     }
 }

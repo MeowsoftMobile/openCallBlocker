@@ -2,8 +2,8 @@ package com.meowsoft.callblocker.common.di.screens
 
 import com.meowsoft.callblocker.application.filters.GetFilters
 import com.meowsoft.callblocker.application.filters.GetFiltersImpl
-import com.meowsoft.callblocker.application.filters.InsertFilter
-import com.meowsoft.callblocker.application.filters.InsertFiltersImpl
+import com.meowsoft.callblocker.application.filterdetails.InsertFilter
+import com.meowsoft.callblocker.application.filterdetails.InsertFiltersImpl
 import com.meowsoft.callblocker.application.navigation.StartScreenUseCase
 import com.meowsoft.callblocker.application.navigation.StartScreenUseCaseImpl
 import com.meowsoft.callblocker.presentation.filters.FiltersViewModel

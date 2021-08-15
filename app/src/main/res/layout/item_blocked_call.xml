@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="callLog"
+            type="com.meowsoft.callblocker.domain.CallLog" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvBlockedNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{callLog.number}"
+            tools:text="TEST1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvBlockedTimestamp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tvBlockedNumber"
+            android:text="@{callLog.timeStamp}"
+            tools:text="TEST2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

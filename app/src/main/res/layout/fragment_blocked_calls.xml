@@ -7,22 +7,24 @@
         <variable
             name="viewModel"
             type="com.meowsoft.callblocker.presentation.blocked.BlockedCallsViewModel" />
+
+        <variable
+            name="callLogsRvSupplier"
+            type="com.meowsoft.callblocker.presentation.common.RvSupplier" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BLOCKED"
-            android:textColor="@color/white"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCallLogs"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:data="@{viewModel.callLogs}"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toTopOf="parent"
+            app:rvSupplier="@{callLogsRvSupplier}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -4,7 +4,7 @@ import android.view.View
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.meowsoft.callblocker.application.filters.GetFilters
-import com.meowsoft.callblocker.application.filters.InsertFilter
+import com.meowsoft.callblocker.application.filterdetails.InsertFilter
 import com.meowsoft.callblocker.domain.Filter
 import com.meowsoft.callblocker.application.navigation.StartScreenUseCase
 import com.meowsoft.callblocker.common.navigation.Screen
