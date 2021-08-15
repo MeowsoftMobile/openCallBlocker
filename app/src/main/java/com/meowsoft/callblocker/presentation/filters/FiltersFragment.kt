@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.meowsoft.callblocker.R
 import com.meowsoft.callblocker.databinding.FragmentFiltersBinding
 import com.meowsoft.callblocker.presentation.common.RvSupplier
-import kotlinx.android.synthetic.main.fragment_filters.*
+import com.meowsoft.callblocker.presentation.filters.list.FiltersListAdapter
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FiltersFragment : Fragment() {

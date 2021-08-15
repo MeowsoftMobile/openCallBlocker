@@ -4,11 +4,22 @@ import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.meowsoft.callblocker.domain.Filter
 import com.meowsoft.callblocker.domain.MenuPage
 import com.meowsoft.callblocker.infrastructure.MenuConfig
 import com.meowsoft.callblocker.presentation.common.OnPageChangedListener
 import com.meowsoft.callblocker.presentation.common.RvSupplier
+import com.meowsoft.callblocker.presentation.filters.list.FiltersListAdapter
 import com.meowsoft.callblocker.presentation.main.viewpager.FragmentAdapter
+
+@BindingAdapter("data")
+fun RecyclerView.bindData(filters: List<Filter>) {
+    adapter?.let {
+        if(it is FiltersListAdapter){
+            it.data = filters
+        }
+    }
+}
 
 @BindingAdapter("rvSupplier")
 fun RecyclerView.bindAdapter(rvSupplier: RvSupplier) {

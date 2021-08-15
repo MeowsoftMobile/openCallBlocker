@@ -8,9 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.meowsoft.callblocker.R
 import com.meowsoft.callblocker.databinding.FragmentBlockedCallsBinding
-import com.meowsoft.callblocker.databinding.FragmentFiltersBinding
-import com.meowsoft.callblocker.presentation.filters.FiltersFragment
-import com.meowsoft.callblocker.presentation.filters.FiltersViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class BlockedCallsFragment : Fragment() {
