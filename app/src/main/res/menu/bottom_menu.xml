@@ -4,16 +4,11 @@
     <item
         android:id="@+id/action_blocked_list"
         android:enabled="true"
-        android:title="Blocked Calls"
+        android:title="@string/blocked_calls"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_filters"
         android:enabled="true"
-        android:title="Filters"
-        app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/third"
-        android:enabled="true"
-        android:title="Third"
+        android:title="@string/filters"
         app:showAsAction="ifRoom" />
 </menu>

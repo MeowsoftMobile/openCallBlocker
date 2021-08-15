@@ -6,7 +6,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.meowsoft.callblocker.domain.MenuPage
 import com.meowsoft.callblocker.infrastructure.MenuConfig
 import com.meowsoft.callblocker.presentation.common.OnPageChangedListener
-import com.meowsoft.callblocker.presentation.main.viewpager.ViewPagerAdapter
+import com.meowsoft.callblocker.presentation.main.viewpager.FragmentAdapter
 
 
 @BindingAdapter("selectedPage")
@@ -39,6 +39,7 @@ fun ViewPager2.setOnSelectionChangeListener(listener: OnPageChangedListener) {
     registerOnPageChangeCallback(
         object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
+
                 listener.onPageChanged(MenuConfig.getByPage(position))
             }
         }
@@ -46,6 +47,6 @@ fun ViewPager2.setOnSelectionChangeListener(listener: OnPageChangedListener) {
 }
 
 @BindingAdapter("adapter")
-fun ViewPager2.bindAdapter(adapter: ViewPagerAdapter) {
+fun ViewPager2.bindAdapter(adapter: FragmentAdapter) {
     this.adapter = adapter
 }

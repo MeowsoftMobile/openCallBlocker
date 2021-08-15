@@ -9,7 +9,9 @@
         <entry key="app/src/main/res/layout/item_blocked_calls.xml" value="0.15780141843971632" />
         <entry key="app/src/main/res/layout/item_filters.xml" value="0.15780141843971632" />
         <entry key="app/src/main/res/layout/view_blocked_calls.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/view_filters.xml" value="0.15780141843971632" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.22592592592592592" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.25462962962962965" />
       </map>
     </option>
   </component>

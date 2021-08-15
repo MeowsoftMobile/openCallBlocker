@@ -10,7 +10,7 @@
 
         <variable
             name="pageAdapter"
-            type="com.meowsoft.callblocker.presentation.main.viewpager.ViewPagerAdapter" />
+            type="com.meowsoft.callblocker.presentation.main.viewpager.FragmentAdapter" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

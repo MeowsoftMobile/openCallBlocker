@@ -10,20 +10,12 @@ class MenuConfig {
             MenuPage(
                 0,
                 R.id.action_blocked_list,
-                R.layout.view_blocked_calls,
                 "Blocked"
             ),
             MenuPage(
                 1,
                 R.id.action_filters,
-                R.layout.view_filters,
                 "Filters"
-            ),
-            MenuPage(
-                2,
-                R.id.third,
-                R.layout.view_filters,
-                "Third"
             )
         )
 

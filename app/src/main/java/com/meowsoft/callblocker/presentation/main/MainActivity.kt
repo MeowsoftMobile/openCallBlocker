@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.meowsoft.callblocker.R
 import com.meowsoft.callblocker.databinding.ActivityMainBinding
-import com.meowsoft.callblocker.presentation.main.viewpager.ViewPagerAdapter
+import com.meowsoft.callblocker.presentation.main.viewpager.FragmentAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity(){
             )
             .also {
                 it.viewModel = viewModel
-                it.pageAdapter = ViewPagerAdapter()
+                it.pageAdapter = FragmentAdapter(this@MainActivity)
                 it.lifecycleOwner = this@MainActivity
             }
     }
