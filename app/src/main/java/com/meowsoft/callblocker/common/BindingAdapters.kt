@@ -1,13 +1,25 @@
 package com.meowsoft.callblocker.common
 
 import androidx.databinding.BindingAdapter
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.meowsoft.callblocker.domain.MenuPage
 import com.meowsoft.callblocker.infrastructure.MenuConfig
 import com.meowsoft.callblocker.presentation.common.OnPageChangedListener
+import com.meowsoft.callblocker.presentation.common.RvSupplier
 import com.meowsoft.callblocker.presentation.main.viewpager.FragmentAdapter
 
+@BindingAdapter("rvSupplier")
+fun RecyclerView.bindAdapter(rvSupplier: RvSupplier) {
+    adapter = rvSupplier.adapter
+    layoutManager = rvSupplier.layoutManager
+}
+
+@BindingAdapter("adapter")
+fun RecyclerView.bindAdapter(adapter: RecyclerView.Adapter<*>) {
+    setAdapter(adapter)
+}
 
 @BindingAdapter("selectedPage")
 fun BottomNavigationView.setSelected(menuPage: MenuPage) {

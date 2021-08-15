@@ -6,8 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.meowsoft.callblocker.R
 import com.meowsoft.callblocker.databinding.FragmentFiltersBinding
+import com.meowsoft.callblocker.presentation.common.RvSupplier
+import kotlinx.android.synthetic.main.fragment_filters.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FiltersFragment : Fragment() {
@@ -20,6 +24,12 @@ class FiltersFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
+        val layoutManager = LinearLayoutManager(
+            context,
+            RecyclerView.VERTICAL,
+            false
+        )
+
         val binding = DataBindingUtil.inflate<FragmentFiltersBinding>(
             inflater,
             R.layout.fragment_filters,
@@ -28,6 +38,10 @@ class FiltersFragment : Fragment() {
         ).also {
             it.viewModel = viewModel
             it.lifecycleOwner = viewLifecycleOwner
+            it.filtersRvSupplier = RvSupplier(
+                FiltersListAdapter(),
+                layoutManager
+            )
         }
 
         return binding.root
