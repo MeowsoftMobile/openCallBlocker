@@ -4,8 +4,8 @@ import com.meowsoft.callblocker.application.filters.GetFilters
 import com.meowsoft.callblocker.application.filters.GetFiltersImpl
 import com.meowsoft.callblocker.application.filters.InsertFilter
 import com.meowsoft.callblocker.application.filters.InsertFiltersImpl
-import com.meowsoft.callblocker.navigation.StartScreenUseCase
-import com.meowsoft.callblocker.navigation.StartScreenUseCaseImpl
+import com.meowsoft.callblocker.application.navigation.StartScreenUseCase
+import com.meowsoft.callblocker.application.navigation.StartScreenUseCaseImpl
 import com.meowsoft.callblocker.presentation.filters.FiltersViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
@@ -23,6 +23,7 @@ val filtersFragmentModule = module {
     single<InsertFilter> {
         InsertFiltersImpl(get())
     }
+
     viewModel {
         FiltersViewModel(
             get(),

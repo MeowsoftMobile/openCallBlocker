@@ -1,15 +1,54 @@
 package com.meowsoft.callblocker.common
 
+import android.view.View
+import android.widget.AdapterView
+import android.widget.BaseAdapter
+import android.widget.Spinner
 import androidx.databinding.BindingAdapter
+import androidx.databinding.InverseBindingAdapter
+import androidx.databinding.InverseBindingListener
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.meowsoft.callblocker.common.config.MenuConfig
 import com.meowsoft.callblocker.domain.Filter
 import com.meowsoft.callblocker.domain.MenuPage
 import com.meowsoft.callblocker.presentation.common.OnPageChangedListener
 import com.meowsoft.callblocker.presentation.common.RvSupplier
 import com.meowsoft.callblocker.presentation.filters.list.FiltersListAdapter
 import com.meowsoft.callblocker.presentation.main.viewpager.FragmentAdapter
+import java.text.FieldPosition
+
+@BindingAdapter("selectedPositionAttrChanged")
+fun Spinner.bindSelectionChangedListener(listener: InverseBindingListener?){
+    if(listener != null){
+        onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                listener.onChange()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+            }
+        }
+    }
+}
+
+@BindingAdapter("selectedPosition")
+fun Spinner.bindSelected(position: Int){
+
+    if(selectedItemPosition != position && position < adapter.count - 1){
+        setSelection(position)
+    }
+
+}
+
+@InverseBindingAdapter(attribute = "selectedPosition")
+fun Spinner.getSelected() = selectedItemPosition
+
+@BindingAdapter("adapter")
+fun Spinner.bindAdapter(adapter: BaseAdapter) {
+    this.adapter = adapter
+}
 
 @BindingAdapter("data")
 fun RecyclerView.bindData(filters: List<Filter>) {

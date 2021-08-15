@@ -1,7 +1,8 @@
-package com.meowsoft.callblocker.navigation
+package com.meowsoft.callblocker.application.navigation
 
+import com.meowsoft.callblocker.common.navigation.Screen
 import com.meowsoft.callblocker.common.navigation.ScreenLauncher
-import com.meowsoft.callblocker.common.navigation.screens.Screen
+
 import io.reactivex.Completable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import timber.log.Timber

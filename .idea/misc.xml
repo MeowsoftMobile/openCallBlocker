@@ -10,6 +10,7 @@
         <entry key="app/src/main/res/layout/item_blocked_calls.xml" value="0.15780141843971632" />
         <entry key="app/src/main/res/layout/item_filter.xml" value="0.17617753623188406" />
         <entry key="app/src/main/res/layout/item_filters.xml" value="0.15780141843971632" />
+        <entry key="app/src/main/res/layout/item_spinner_filter_type.xml" value="0.17617753623188406" />
         <entry key="app/src/main/res/layout/view_blocked_calls.xml" value="0.375" />
         <entry key="app/src/main/res/layout/view_filters.xml" value="0.15780141843971632" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.22592592592592592" />

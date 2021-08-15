@@ -1,6 +1,6 @@
-package com.meowsoft.callblocker.navigation
+package com.meowsoft.callblocker.application.navigation
 
 import com.meowsoft.callblocker.application.CompletableUseCaseWithParam
-import com.meowsoft.callblocker.common.navigation.screens.Screen
+import com.meowsoft.callblocker.common.navigation.Screen
 
 interface StartScreenUseCase : CompletableUseCaseWithParam<Screen>

@@ -5,9 +5,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.meowsoft.callblocker.application.filters.GetFilters
 import com.meowsoft.callblocker.application.filters.InsertFilter
-import com.meowsoft.callblocker.common.navigation.screens.Screen
 import com.meowsoft.callblocker.domain.Filter
-import com.meowsoft.callblocker.navigation.StartScreenUseCase
+import com.meowsoft.callblocker.application.navigation.StartScreenUseCase
+import com.meowsoft.callblocker.common.navigation.Screen
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
 

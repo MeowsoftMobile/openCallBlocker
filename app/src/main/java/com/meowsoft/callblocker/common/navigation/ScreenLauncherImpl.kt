@@ -1,7 +1,5 @@
 package com.meowsoft.callblocker.common.navigation
 
-import com.meowsoft.callblocker.common.navigation.screens.FilterDetailsScreen
-import com.meowsoft.callblocker.common.navigation.screens.Screen
 import com.meowsoft.callblocker.presentation.filterdetails.FilterDetailsActivity
 
 class ScreenLauncherImpl(
