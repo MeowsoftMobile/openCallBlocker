@@ -4,20 +4,39 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.meowsoft.callblocker.R
+import com.meowsoft.callblocker.databinding.FragmentBlockedCallsBinding
+import com.meowsoft.callblocker.databinding.FragmentFiltersBinding
+import com.meowsoft.callblocker.presentation.filters.FiltersFragment
+import com.meowsoft.callblocker.presentation.filters.FiltersViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class BlockedCallsFragment : Fragment() {
 
-    companion object{
-        fun getInstance() = BlockedCallsFragment()
-    }
+    private val viewModel: BlockedCallsViewModel by viewModel()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_blocked_calls, container, false)
+    ): View {
+
+        val binding = DataBindingUtil.inflate<FragmentBlockedCallsBinding>(
+            inflater,
+            R.layout.fragment_blocked_calls,
+            container,
+            false
+        ).also {
+            it.viewModel = viewModel
+            it.lifecycleOwner = viewLifecycleOwner
+        }
+
+        return binding.root
+    }
+
+    companion object{
+        fun getInstance() = BlockedCallsFragment()
     }
 }
