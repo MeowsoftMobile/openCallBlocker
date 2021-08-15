@@ -5,13 +5,16 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.meowsoft.callblocker.application.filters.GetFilters
 import com.meowsoft.callblocker.application.filters.InsertFilter
+import com.meowsoft.callblocker.common.navigation.screens.Screen
 import com.meowsoft.callblocker.domain.Filter
+import com.meowsoft.callblocker.navigation.StartScreenUseCase
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
 
 class FiltersViewModel(
     private val getFilters: GetFilters,
-    private val insertFilter: InsertFilter
+    private val insertFilter: InsertFilter,
+    private val startScreen: StartScreenUseCase
 ) : ViewModel() {
 
     val filtersData = MutableLiveData<List<Filter>>(listOf())
@@ -23,7 +26,11 @@ class FiltersViewModel(
     }
 
     fun onFabClick(view: View){
-        insertFilter(Filter("Test"))
+        startScreen
+            .execute(
+                Screen.FilterDetailsScreen
+            )
+            .subscribe()
     }
 
     private fun insertFilter(filter: Filter){
