@@ -13,10 +13,10 @@ import com.meowsoft.callblocker.infrastructure.database.entity.FilterEntity
     ],
     version = 1
 )
-abstract class CallBlockerDatabase : RoomDatabase(){
+abstract class CallBlockerDatabase : RoomDatabase() {
     abstract fun filtersDao(): FiltersDao
 
-    companion object{
+    companion object {
         const val NAME = "callblocker_db.db"
     }
 }

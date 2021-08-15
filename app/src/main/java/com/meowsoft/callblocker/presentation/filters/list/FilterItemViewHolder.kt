@@ -8,7 +8,7 @@ class FilterItemViewHolder(
     private val binding: ItemFilterBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(filter: Filter){
+    fun bind(filter: Filter) {
         binding.filter = filter
     }
 

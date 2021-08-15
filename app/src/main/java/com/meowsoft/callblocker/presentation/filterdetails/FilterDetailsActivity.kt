@@ -27,8 +27,8 @@ class FilterDetailsActivity : AppCompatActivity() {
             }
     }
 
-    companion object{
-        fun start(context: Context){
+    companion object {
+        fun start(context: Context) {
             context.startActivity(
                 Intent(
                     context,

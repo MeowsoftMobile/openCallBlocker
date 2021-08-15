@@ -33,7 +33,7 @@ class BlockedCallsFragment : Fragment() {
         return binding.root
     }
 
-    companion object{
+    companion object {
         fun getInstance() = BlockedCallsFragment()
     }
 }

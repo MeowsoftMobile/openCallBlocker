@@ -12,7 +12,7 @@ class FragmentAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activi
     override fun getItemCount(): Int = MenuConfig.count
 
     override fun createFragment(position: Int): Fragment =
-        when(position){
+        when (position) {
             0 -> BlockedCallsFragment.getInstance()
             1 -> FiltersFragment.getInstance()
             else -> BlockedCallsFragment.getInstance()

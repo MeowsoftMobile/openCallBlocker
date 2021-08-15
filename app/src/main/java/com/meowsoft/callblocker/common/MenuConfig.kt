@@ -4,7 +4,7 @@ import com.meowsoft.callblocker.R
 import com.meowsoft.callblocker.domain.MenuPage
 
 class MenuConfig {
-    companion object{
+    companion object {
 
         private val menu = listOf(
             MenuPage(

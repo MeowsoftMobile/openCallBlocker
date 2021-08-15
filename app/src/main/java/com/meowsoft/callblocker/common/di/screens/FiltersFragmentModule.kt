@@ -8,20 +8,19 @@ import com.meowsoft.callblocker.navigation.StartScreenUseCase
 import com.meowsoft.callblocker.navigation.StartScreenUseCaseImpl
 import com.meowsoft.callblocker.presentation.filters.FiltersViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
-import org.koin.core.scope.get
 import org.koin.dsl.module
 
 val filtersFragmentModule = module {
 
-    single<StartScreenUseCase>{
+    single<StartScreenUseCase> {
         StartScreenUseCaseImpl(get())
     }
 
-    single<GetFilters>{
+    single<GetFilters> {
         GetFiltersImpl(get())
     }
 
-    single<InsertFilter>{
+    single<InsertFilter> {
         InsertFiltersImpl(get())
     }
     viewModel {

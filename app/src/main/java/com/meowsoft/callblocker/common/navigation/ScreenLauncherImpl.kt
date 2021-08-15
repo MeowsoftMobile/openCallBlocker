@@ -11,7 +11,7 @@ class ScreenLauncherImpl(
     override fun startScreen(screen: Screen) {
         val activity = activityProvider.currentActivity!!
 
-        when(screen){
+        when (screen) {
             is FilterDetailsScreen -> FilterDetailsActivity.start(activity)
         }
     }

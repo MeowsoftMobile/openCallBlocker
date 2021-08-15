@@ -5,13 +5,12 @@ import android.telecom.CallScreeningService
 
 class CallBlockerService : CallScreeningService() {
 
-    
 
     override fun onScreenCall(callDetails: Call.Details) {
         val x = 0
         respondToCall(
             callDetails,
-            with(CallResponse.Builder()){
+            with(CallResponse.Builder()) {
                 setDisallowCall(false)
                 setRejectCall(false)
                 setSilenceCall(false)

@@ -25,7 +25,7 @@ class FiltersViewModel(
         getFilters()
     }
 
-    fun onFabClick(view: View){
+    fun onFabClick(view: View) {
         startScreen
             .execute(
                 Screen.FilterDetailsScreen
@@ -33,7 +33,7 @@ class FiltersViewModel(
             .subscribe()
     }
 
-    private fun insertFilter(filter: Filter){
+    private fun insertFilter(filter: Filter) {
         val sub = insertFilter
             .execute(filter)
             .subscribeBy {
@@ -43,7 +43,7 @@ class FiltersViewModel(
         disposable.add(sub)
     }
 
-    private fun getFilters(){
+    private fun getFilters() {
 
         val sub = getFilters
             .execute()

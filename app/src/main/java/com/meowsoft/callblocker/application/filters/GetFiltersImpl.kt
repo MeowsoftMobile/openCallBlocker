@@ -8,7 +8,7 @@ import io.reactivex.schedulers.Schedulers
 
 class GetFiltersImpl(
     private val repository: FiltersRepository
-) : GetFilters{
+) : GetFilters {
 
     override fun execute(): Flowable<List<Filter>> =
         repository.getFilters()

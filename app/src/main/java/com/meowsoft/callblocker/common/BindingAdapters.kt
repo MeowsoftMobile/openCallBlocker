@@ -14,7 +14,7 @@ import com.meowsoft.callblocker.presentation.main.viewpager.FragmentAdapter
 @BindingAdapter("data")
 fun RecyclerView.bindData(filters: List<Filter>) {
     adapter?.let {
-        if(it is FiltersListAdapter){
+        if (it is FiltersListAdapter) {
             it.data = filters
         }
     }

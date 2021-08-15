@@ -9,7 +9,7 @@ import com.meowsoft.callblocker.presentation.main.viewpager.FragmentAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity() {
 
     private val viewModel: MainViewModel by viewModel()
 

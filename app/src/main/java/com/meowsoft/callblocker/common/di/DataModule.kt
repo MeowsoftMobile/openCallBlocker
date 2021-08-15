@@ -15,5 +15,5 @@ val dataModule = module {
             .build()
     }
 
-    single{get<CallBlockerDatabase>().filtersDao()}
+    single { get<CallBlockerDatabase>().filtersDao() }
 }

@@ -12,7 +12,7 @@ class ActivityProvider(applicationContext: Context) {
 
     init {
         (applicationContext as CallBlockerApplication).registerActivityLifecycleCallbacks(
-            object : Application.ActivityLifecycleCallbacks{
+            object : Application.ActivityLifecycleCallbacks {
                 override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
                 }
 
