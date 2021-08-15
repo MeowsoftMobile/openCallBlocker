@@ -2,9 +2,8 @@ package com.meowsoft.callblocker.presentation.main.viewpager
 
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.meowsoft.callblocker.infrastructure.MenuConfig
+import com.meowsoft.callblocker.common.MenuConfig
 import com.meowsoft.callblocker.presentation.blocked.BlockedCallsFragment
 import com.meowsoft.callblocker.presentation.filters.FiltersFragment
 

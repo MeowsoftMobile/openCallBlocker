@@ -1,4 +1,4 @@
-package com.meowsoft.callblocker.infrastructure
+package com.meowsoft.callblocker.common
 
 import com.meowsoft.callblocker.R
 import com.meowsoft.callblocker.domain.MenuPage

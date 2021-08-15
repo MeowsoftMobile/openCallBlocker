@@ -6,6 +6,7 @@ import com.meowsoft.callblocker.common.di.screens.mainActivityModule
 
 val allModules = listOf(
     appModule,
+    dataModule,
     mainActivityModule,
     filtersFragmentModule,
     blockedCallsFragmentModule
