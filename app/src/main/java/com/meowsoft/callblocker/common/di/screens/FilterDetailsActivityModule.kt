@@ -10,15 +10,13 @@ import org.koin.dsl.module
 
 val filterDetailsActivityModule = module {
 
-    scope(named<FilterDetailsActivity>()){
-        scoped<InsertFilter>{
-            InsertFiltersImpl(get())
-        }
+    single<InsertFilter>{
+        InsertFiltersImpl(get())
     }
 
     viewModel { scope ->
         FilterDetailsViewModel(
-            scope.get()
+            get()
         )
     }
 }
