@@ -5,6 +5,7 @@ import com.meowsoft.callblocker.domain.toFilterEntity
 import com.meowsoft.callblocker.infrastructure.database.dao.FiltersDao
 import com.meowsoft.callblocker.infrastructure.database.entity.toFiltersList
 import io.reactivex.Flowable
+import io.reactivex.Single
 
 class FiltersRepositoryImpl(
     private val filtersDao: FiltersDao
@@ -16,9 +17,16 @@ class FiltersRepositoryImpl(
                 filter.toFilterEntity()
             )
 
-    override fun getFilters(): Flowable<List<Filter>> =
+    override fun subscribeFilters(): Flowable<List<Filter>> =
         filtersDao
             .subscribeAll()
+            .map {
+                it.toFiltersList()
+            }
+
+    override fun getFilters(): Single<List<Filter>> =
+        filtersDao
+            .getAll()
             .map {
                 it.toFiltersList()
             }

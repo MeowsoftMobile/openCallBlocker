@@ -29,7 +29,9 @@ class FilterDetailsViewModel(
         val sub = insertFilter
             .execute(
                 Filter(
-                    "${resolveFilter()} ${number.value}"
+                    "${resolveFilter()} ${number.value}",
+                    resolveFilter(),
+                    number.value ?: ""
                 )
             )
             .subscribeBy {

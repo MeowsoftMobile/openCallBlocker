@@ -11,7 +11,7 @@ class GetFiltersImpl(
 ) : GetFilters {
 
     override fun execute(): Flowable<List<Filter>> =
-        repository.getFilters()
+        repository.subscribeFilters()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
 }

@@ -4,6 +4,7 @@ import android.telecom.Call
 import android.telecom.CallScreeningService
 import com.meowsoft.callblocker.domain.CallLog
 import com.meowsoft.callblocker.infrastructure.repository.CallLogsRepository
+import com.meowsoft.callblocker.infrastructure.repository.FiltersRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.rxkotlin.subscribeBy
@@ -16,6 +17,8 @@ import timber.log.Timber
 class CallBlockerService : CallScreeningService() {
 
     private val callLogRepository: CallLogsRepository by inject()
+    private val filtersRepository: FiltersRepository by inject()
+
     private val disposable = CompositeDisposable()
 
     companion object {
@@ -34,32 +37,39 @@ class CallBlockerService : CallScreeningService() {
 
         Timber.tag(LOG_TAG).d("Incoming call: $number")
 
-        val sub = callLogRepository.insertCallLog(
-            CallLog(
-                number,
-                timeStamp
-            )
-        )
+        val sub = filtersRepository
+            .getFilters()
+            .map {
+                CallJudge.validateCall(number, it)
+            }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribeBy({
-                Timber.tag(LOG_TAG).d("Error: ${it.message} - ${it.cause}")
-            }, {
-                Timber.tag(LOG_TAG).d("Registered new incoming call: $number")
-            })
+            .subscribeBy { verdict ->
+                if (verdict == CallJudge.Verdict.BLOCK) {
+                    val sub = callLogRepository.insertCallLog(
+                        CallLog(
+                            number,
+                            timeStamp
+                        )
+                    )
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe()
 
-        disposable.add(sub)
+                    disposable.add(sub)
 
-        respondToCall(
-            callDetails,
-            with(CallResponse.Builder()) {
-                setDisallowCall(false)
-                setRejectCall(false)
-                setSilenceCall(false)
-                setSkipCallLog(false)
-                setSkipNotification(false)
-                build()
+                    respondToCall(
+                        callDetails,
+                        with(CallResponse.Builder()) {
+                            setDisallowCall(true)
+                            setRejectCall(false)
+                            setSilenceCall(true)
+                            setSkipCallLog(true)
+                            setSkipNotification(true)
+                            build()
+                        }
+                    )
+                }
             }
-        )
     }
 }

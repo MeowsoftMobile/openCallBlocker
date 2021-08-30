@@ -3,13 +3,13 @@ package com.meowsoft.callblocker.common.config
 import com.meowsoft.callblocker.R
 
 enum class FilterType {
-    IS,
     CONTAINS,
-    STARTS_WITH;
+    STARTS_WITH,
+    ENDS_WITH;
 
     fun toStringRes() =
-        when(this){
-            IS -> R.string.is_filter
+        when (this) {
+            ENDS_WITH -> R.string.ends_with_filter
             CONTAINS -> R.string.contains_filter
             STARTS_WITH -> R.string.starts_with_filter
         }
